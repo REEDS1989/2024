@@ -1,0 +1,51 @@
+graph TD
+
+  subgraph Setup Roles and Credentials
+    A1[Admin: Poonam Thakur] --> A2[Maker: P. Vijay Raj]
+    A2 --> A3[Users: S. Ravi Kumar Reddy & S. Sunanda]
+    A3 --> A4[Ensure Login Credentials and Authentication Devices]
+  end
+
+  subgraph Beneficiary Management
+    B1[Maker Login] --> B2[Manage Beneficiary Section]
+    B2 --> B3[Add Beneficiary Details]
+    B3 --> B4[Submit Request for Approval]
+
+    B5[Admin Login] --> B6[Pending for Approval Section]
+    B6 --> B7[Review Beneficiary Details]
+    B7 --> B8[Approve Beneficiary]
+  end
+
+  subgraph Payment Process
+    subgraph Preparation
+      P1[Ensure Sufficient Funds]
+      P2[Verify Beneficiary Details]
+    end
+    
+    subgraph Maker Actions
+      M1[Login to CINB] --> M2[Payments/Transfers Section]
+      M2 --> M3[Select Transfer Type]
+      M3 --> M4[Choose Debit Account & Beneficiary]
+      M4 --> M5[Enter Transfer Amount]
+      M5 --> M6[Submit Payment Request]
+    end
+
+    subgraph Approval Process
+      U1[User 1 Login] --> U2[Pending for Approval Section]
+      U2 --> U3[Review Payment Request]
+      U3 --> U4[Approve/Reject Payment Request]
+
+      U5[Second User Login] --> U6[Pending for Approval Section]
+      U6 --> U7[Second Review of Transaction]
+      U7 --> U8[Approve/Reject Payment Request]
+    end
+
+    subgraph Confirmation
+      C1[Verify Payment Status]
+      C2[Receive Email/SMS Notification]
+      C3[Download & Save Transaction Receipt]
+    end
+  end
+
+  Setup Roles and Credentials --> Beneficiary Management
+  Beneficiary Management --> Payment Process --> Confirmation
